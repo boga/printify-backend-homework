@@ -1,3 +1,13 @@
+App is Dockerized, but it's for developer purpose only, not production; to make it prod-ready we should move to
+multistage builds, use this Dockerfile as first build and then copy app/vendor/config files to some PHP-alpine image; 
+this will make production-ready image.  
+I've used general Exception, but definitely custom exceptions should be used.  
+Couldn't write all the tests I was intent to, sorry.  
+App can be started using Docker Compose: 
+- rename `sample.env` to `.env`
+- run `docker-compose up --build`
+---
+
 Create a tiny RESTful web service with the following business requirements:
 
 ## Application must expose REST API endpoints for the following functionality:
